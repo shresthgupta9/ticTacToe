@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik Doodle Shadow";
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+header h1 {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 53px;
+}
+
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 300px;
+}
+
+.square {
+  display: flex;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 30%;
+  font-size: 80px;
+}
+
+#controls input {
+  border: none;
+  padding: 10px 10px;
+  background-color: white;
+  color: black;
+}
+
+#controls button {
+  color: black;
+  border: none;
+  margin: 10px 0;
+  padding: 10px 10px;
+  background-color: rgb(255, 255, 255);
+
+}
+
+#controls button:hover {
+  background-color: rgb(215, 215, 215);
+}
+
+#controls,
+#message {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#message {
+    font-size: 35px;
+}
