@@ -1,4 +1,4 @@
-
+// display iife for #message div
 const displayController = (() => {
     const renderMessage = (message) => {
         const box = document.querySelector("#message");
@@ -14,6 +14,7 @@ const Gameboard = (() => {
     let gameboard = ["", "", "", "", "", "", "", "", ""];
     const render = () => {
         let boardHTML = "";
+        // automatically selects 1st parameter as arr[index] and 2nd parameter as index
         gameboard.forEach((square, index) => {
             boardHTML += `<div class="square" id="square-${index}">${square}</div>`;
         });
@@ -26,8 +27,8 @@ const Gameboard = (() => {
         });
     };
 
-    const update = (index, value) => {
-        gameboard[index] = value;
+    const update = (index, mark) => {
+        gameboard[index] = mark;
         render();
     };
 
@@ -54,8 +55,8 @@ const Game = (() => {
 
     const start = () => {
         players = [
-            createPlayer(document.querySelector("#player1").value, "X"),
-            createPlayer(document.querySelector("#player2").value, "O")
+            createPlayer((document.querySelector("#player1").value === "" ? "X" : document.querySelector("#player1").value), "X"),
+            createPlayer((document.querySelector("#player2").value === "" ? "O" : document.querySelector("#player2").value), "O")
         ];
         currentPlayerIndex = 0;
         gameOver = false;
@@ -93,6 +94,7 @@ const Game = (() => {
         const box = document.querySelector("#message");
         box.innerHTML = "";
         gameOver = false;
+        currentPlayerIndex = 0;
     };
 
     return {
